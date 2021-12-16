@@ -1,3 +1,6 @@
+import sys
+sys.path.append(".")
+print(sys.path)
 import alpaca_trade_api as tradeapi
 import pandas as pd
 import numpy as np
@@ -5,7 +8,7 @@ from finaltrader.util.stockstats import StockDataFrame as Sdf
 import trading_calendars as tc
 import pytz
 
-from finaltrader.util import config 
+from util import config 
 
 class AlpacaProcessor():
     def __init__(self, API_KEY=None, API_SECRET=None, APCA_API_BASE_URL=None, api=None):
@@ -51,7 +54,6 @@ class AlpacaProcessor():
             
     def clean_data(self, df):
         tic_list = np.unique(df.tic.values)
-    
         trading_days = self.get_trading_days(start=self.start, end=self.end)
         
         times = []

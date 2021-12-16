@@ -6,8 +6,6 @@ import time
 from binance.client import Client
 from datetime import timedelta, datetime
 from dateutil import parser
-from tqdm import tqdm_notebook #(Optional, used for progress-bars)
-from binance.client import Client
 
 DATA_PATH = "/Users/taoxing/Desktop/Bahamut/data/CoinData/main"
 
