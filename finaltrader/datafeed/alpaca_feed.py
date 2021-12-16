@@ -1,14 +1,11 @@
-import sys
-sys.path.append(".")
-print(sys.path)
 import alpaca_trade_api as tradeapi
 import pandas as pd
 import numpy as np
-from finaltrader.util.stockstats import StockDataFrame as Sdf
+from stockstats import StockDataFrame as Sdf
 import trading_calendars as tc
 import pytz
 
-from util import config 
+from .. import util
 
 class AlpacaProcessor():
     def __init__(self, API_KEY=None, API_SECRET=None, APCA_API_BASE_URL=None, api=None):
@@ -22,7 +19,6 @@ class AlpacaProcessor():
             
     def download_data(self, ticker_list, start_date, end_date, 
                    time_interval) -> pd.DataFrame:
-        
         self.start = start_date
         self.end = end_date
         self.time_interval = time_interval

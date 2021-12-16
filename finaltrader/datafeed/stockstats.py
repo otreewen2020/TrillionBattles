@@ -9,7 +9,7 @@ import re
 
 import numpy as np
 import pandas as pd
-from util.int_date import get_date_from_diff
+from int_date import get_date_from_diff
 
 __author__ = 'Cedric Zhuang'
 
